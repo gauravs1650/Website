@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Food Ordering || Saini's Food Point</title>
+    <style>
+        @media screen and (max-width:990px) {
+            .navbar li {
+                padding: 20px !important;
+            }
+
+            .navbar li input {
+                width: 118px !important;
+            }
+
+            .navbar ul {
+                justify-content: center !important;
+                align-items: center !important;
+                overflow: hidden;
+            }
+
+        }
+
+        @media screen and (max-width: 485px) {
+            .navbar li {
+                padding: 1px !important;
+            }
+
+            .navbar {
+                justify-content: center !important;
+                align-items: center !important;
+                overflow: hidden;
+            }
+
+        }
+
+
+        * {
+            padding: 0;
+            margin: 0px 0px;
+
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            border: 5px solid black;
+            position: sticky;
+            top: 0px;
+            background-color: rgba(23, 187, 160, 0.482);
+        }
+
+        .logo {
+            /* border: 2px solid red; */
+            width: 100%;
+            height: 80px;
+            /* margin: 20px; */
+            text-align: center;
+            background-color: black;
+            padding-top: 15px;
+        }
+
+        .navbar::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            /* position: sticky; */
+            top: 0px;
+            background-color: black;
+            z-index: -1;
+        }
+
+        .navbar {
+            display: flex;
+            /* border: 2px solid red; */
+            margin: 0px auto;
+            /* width: 800px; */
+            text-align: left;
+            padding: 10px 0px;
+            position: sticky;
+            top: 0px;
+            overflow: hidden;
+            z-index: 2;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+
+        .navbar li {
+            display: inline;
+            list-style: none;
+            padding: 20px;
+
+
+
+        }
+
+        .navbar li a {
+            text-decoration: none;
+            border: 2px solid black;
+            padding: 2px;
+            border-radius: 8px;
+            color: white;
+            /* margin-top: 10px; */
+
+
+        }
+
+        .navbar li input {
+            /* display: inline-block; */
+            width: 220px;
+            /* border: 2px solid red; */
+            border-radius: 10px;
+            padding: 2px 0px;
+            text-align: center;
+
+        }
+
+        .navbar ul {
+            margin: -15px 0px -14px 0px;
+            display: flex;
+
+            /* justify-content: center !important;
+            align-items: center !important; */
+
+        }
+
+        .welcome::before {
+            content: "";
+            background: url('106.jpg') no-repeat center center/cover;
+            position: absolute;
+            /* top: 0; */
+            left: 0;
+            right: 0;
+
+            /* width: 100%; */
+            height: 100%;
+            opacity: 0.7;
+            z-index: -1;
+        }
+
+        .welcome {
+            /* border: 2px solid red; */
+            color: black;
+            position: relative;
+            font-weight: bolder;
+            padding-bottom: 2px;
+
+            /* text-shadow: 1px 0px white; */
+
+            /* width: 100dvw; */
+            /* background: url('wel_back.jpg') no-repeat center center/cover;
+            opacity: 0.9; */
+
+        }
+
+        .welcome h3 {
+            text-align: center;
+            padding-top: 10px 0;
+            font-size: 40px;
+        }
+
+
+        .welcome p {
+            /* text-align: center; */
+            padding: 20px 10px;
+            font-size: 25px;
+            /* border: 2px solid green; */
+            width: 55%;
+            margin: auto;
+
+        }
+
+        .welcome input {
+            display: block;
+            text-align: center;
+            margin: 20px auto;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 125px;
+            padding: 8px;
+            font-size: 17px;
+            font-weight: bold;
+            color: white;
+            background-color: green;
+            margin-bottom: 50px;
+        }
+
+        .welcome input:hover {
+            color: black;
+            background-color: rgb(243, 231, 9);
+        }
+
+        .content {
+            /* margin: 50px 0px; */
+            position: relative;
+        }
+
+        .sec1 {
+            /* border: 2px solid red; */
+            text-align: center;
+            /* width: ; */
+            /* margin: 20px 0px; */
+            /* text-align: justify; */
+            background-color: #cbccc1;
+        }
+
+        .box-items {
+            display: inline-block;
+            /* border: 2px solid green; */
+            padding: 25px 5px;
+            margin: 15px;
+            width: 250px;
+            background-color: rgba(23, 187, 160, 0.482);
+
+        }
+
+        /* .sec1 img {
+            border: 2px solid violet;
+        } */
+
+        #Service {
+            /* border: 2px solid yellow; */
+            margin-bottom: 0px;
+            text-align: center;
+            margin-top: 0px;
+            font-size: 40px;
+            padding-top: 40px;
+            background-color: #cbccc1;
+        }
+
+        .client {
+            /* border: 2px solid red; */
+            text-align: center;
+            /* display: flex; */
+            position: relative;
+        }
+
+        .clients-item {
+            padding: 10px;
+        }
+
+        .contact {
+            /* border: 2px solid red; */
+            text-align: center;
+            margin: 0px 0px;
+            position: relative;
+            top: 0px;
+            padding-bottom: 20px;
+            font-size: 20px;
+
+        }
+
+        .contact h3 {
+            margin-top: 0px;
+            margin-bottom: 20px;
+            font-size: 40px;
+            font-weight: bolder;
+        }
+
+        .contact h5 {
+            margin-bottom: 20px;
+            font-size: 23px;
+        }
+
+        .contact::before {
+            content: "";
+            position: absolute;
+            left: 0px;
+            background: url('contact.jpg') no-repeat center center/cover;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        .contact input {
+            padding: 3px;
+            margin: 5px;
+            border-radius: 7px;
+            border-color: gray;
+            width: 180px;
+            height: 18px;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        /* Main CSS starts here  */
+        .logo img {
+            width: 60px;
+            height: 60px;
+            border-radius: 17px;
+        }
+
+        .navbar li a:hover {
+            background-color: rgba(216, 251, 41, 0.868);
+            color: black;
+        }
+
+        .box-items img {
+            width: 142px;
+            height: 121px;
+        }
+
+        /* responsive css stars here  */
+        #item-2 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .client img {
+            height: 120px;
+            width: 120px;
+        }
+
+        .client h3 {
+            font-size: 40px;
+            color: black;
+            font-weight: bolder;
+        }
+
+        .client::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            background: url("1.jpg") no-repeat center center/cover;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        #dell img {
+            width: 200px;
+        }
+
+        #submit {
+            background-color: green;
+            width: 125px;
+            height: 40px;
+            padding: 8px;
+            font-size: 17px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+        }
+
+        #submit:hover {
+            color: black;
+            background-color: rgb(243, 231, 9);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="container"> -->
+
+    <div class="logo" id="logo1">
+        <img src="Food_logo.png" alt="Remote image">
+    </div>
+    <header class="navbar">
+
+
+        <ul>
+            <li><a href="#logo1">Home</a></li>
+            <li><a href="#item-1">About</a></li>
+            <li><a href="#item-2">Services</a></li>
+            <li><a href="#clt">Clients</a></li>
+            <li><a href="#cnt">Contact</a></li>
+            <li><input type="text" value="" placeholder="Search our website"></li>
+
+        </ul>
+        <!-- <input type="text" value="" placeholder="Search our website"> -->
+    </header>
+
+    <!-- </div> -->
+    <section class="content">
+        <div class="welcome" id="item-1">
+            <h3 id="About">About Us</h3>
+            <h3>Welcome To Saini's Food Point</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio consequuntur illo, quos
+                reprehenderit labore voluptatibus aspernatur cum a velit saepe nostrum enim cupiditate magni quod
+                possimus, laborum esse exercitationem in excepturi sint, blanditiis accusantium. Fugiat est,
+                officiis eius facilis, modi voluptatibus, vero tenetur reiciendis eveniet magni ipsam saepe
+                molestias dolorum.</p>
+            <div>
+                <input type="submit" value="Order Now">
+            </div>
+        </div>
+    </section>
+    <!-- <section></section> -->
+    <h3 id="Service"> Our Services</h3>
+    <div class="sec1" id="item-2">
+        <div class="box-items" id="box-items-1">
+            <img src="pizza.png" alt="loading">
+            <h3>Food Catering</h3>
+            box 1 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste harum enim alias ut mollitia
+            eum suscipit asperiores sunt doloremque nisi facere provident commodi, quasi nesciunt id nihil
+            maiores impedit dicta rerum. Expedita repellat voluptatibus corrupti quia laudantium vero aut
+            debitis minus omnis reprehenderit optio, deserunt dolorem fugiat accusantium architecto dolore?
+        </div>
+        <div class="box-items" id="box-items-2">
+            <img src="lunc-removebg-preview.png" alt="loading">
+            <h3>Food Ordering</h3>
+            box 2 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste harum enim alias ut mollitia
+            eum suscipit asperiores sunt doloremque nisi facere provident commodi, quasi nesciunt id nihil
+            maiores impedit dicta rerum. Expedita repellat voluptatibus corrupti quia laudantium vero aut
+            debitis minus omnis reprehenderit optio, deserunt dolorem fugiat accusantium architecto dolore?
+        </div>
+        <div class="box-items" id="box-items-3">
+            <img src="delivery.png" alt="loading">
+            <h3>Food Delivery</h3>
+            box 3 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste harum enim alias ut mollitia
+            eum suscipit asperiores sunt doloremque nisi facere provident commodi, quasi nesciunt id nihil
+            maiores impedit dicta rerum. Expedita repellat voluptatibus corrupti quia laudantium vero aut
+            debitis minus omnis reprehenderit optio, deserunt dolorem fugiat accusantium architecto dolore?
+        </div>
+    </div>
+
+
+
+    <!-- Its out of section  -->
+    <div class="client" id="clt">
+        <h3>Our Clients</h3>
+
+        <div class="clients-item">
+            <img src="hplogo.webp" alt="hp">
+        </div>
+        <div class="clients-item" id="dell">
+            <img src="dell-removebg-preview.png" alt="dell">
+        </div>
+        <div class="clients-item">
+            <img src="acer-removebg-preview.png" alt="acer">
+        </div>
+        <div class="clients-item">
+            <img src="apple-removebg-preview.png" alt="apple">
+        </div>
+
+    </div>
+
+    <!-- Its also out of section  -->
+    <div class="contact" id="cnt">
+        <h3>Contact With Us</h3>
+        <h5>Enter these information for contact with us:</h5>
+        <form action="#">
+            <div>
+                <label for="Name">First Name:</label>
+                <input type="text" value="" placeholder="Enter First Your Name" required>
+            </div>
+            <!-- <br> -->
+            <div>
+                <label for="Name">Last Name:</label>
+                <input type="text" value="" placeholder="Enter Your Last Name" required>
+            </div>
+
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" value="" placeholder="Enter Your Email" required>
+            </div>
+            <!-- <br> -->
+            <div>
+                <label for="phNumber">Phone Number:</label>
+                <input type="number" value="" placeholder="Enter Your Phone Number" required>
+            </div>
+            <label for="message">Message:</label>
+            <div>
+                <textarea name="message" id="message" cols="40" rows="10"></textarea>
+            </div>
+            <input type="submit" value="Submit" id="submit">
+        </form>
+    </div>
+
+</body>
+
+</html>
